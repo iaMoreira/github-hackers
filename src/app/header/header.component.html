@@ -1,0 +1,26 @@
+<div class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark container">
+    <a class="navbar-brand" href="#">
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png"
+       width="30" height="30" class="d-inline-block align-top" alt="">
+      GitHub Hackers
+      </a>
+      <ul class="navbar-nav d-flex flex-row " *ngIf="isAuthenticated" >
+        <li class="nav-item  mr-2" [routerLink]="['/events']" routerLinkActive="active" >
+          <a class="nav-link" >Eventos <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-2" [routerLink]="['/']" routerLinkActive="active">
+          <a class="nav-link" >Repositórios</a>
+        </li>
+        <li class="nav-item " [routerLink]="['/']" routerLinkActive="active">
+          <a class="nav-link" >Categorias</a>
+        </li>
+      </ul>
+      <div class="float-right my-auto ml-auto mr-2 ">
+        <span class="text-white mr-3 text-"> {{currentUser?.name}}</span> 
+        <img [src]="currentUser?.avatar_url ? currentUser.avatar_url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSUP7RN0hZaqZpljtz9c0nz5eSc2DFY-XSRQA&usqp=CAU' " alt="..." class="rounded-circle d-inline-block" width="40" height="40">
+        <a (click)="logout()" class="text-white ml-2">Sair</a>
+      </div>
+  </nav>
+</div>
