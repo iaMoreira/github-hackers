@@ -1,0 +1,18 @@
+<div>
+  <h3>Lista de eventos</h3>
+  <div *ngFor="let event of events" 
+    class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="event.actor.avatar_url" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{event.actor.login}}</h5>
+          <p class="card-text">{{event.repo.name}}</p>
+          <p class="card-text"><small class="">{{ event.created_at | date:'HH:mm:ss dd/MM/yyyy'}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

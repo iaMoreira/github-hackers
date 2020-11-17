@@ -31,7 +31,6 @@ export class UserService {
     window.localStorage.setItem('user', JSON.stringify(user));
     this.currentUserSubject.next(user);
     this.isAuthenticatedSubject.next(true);
-
   }
 
   deleteUser(): void {

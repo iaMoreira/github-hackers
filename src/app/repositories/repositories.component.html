@@ -1,0 +1,15 @@
+<div>
+  <h3>Lista de Repositórios</h3>
+  <div class="card mt-3" *ngFor="let repository of repositories">
+    <div class="card-body">
+      <h5 class="card-title">
+        <a [routerLink]="['/']" >{{repository.name}}</a> 
+      </h5>
+      <p class="card-text">{{repository.description}}</p>
+      <p class="card-text d-flex justify-content-between">
+        <span class="badge badge-secondary ">{{repository.language}}</span>
+        <small class="text-muted ">{{ repository.created_at | date:'HH:mm:ss dd/MM/yyyy'}}</small>
+      </p>
+    </div>
+  </div>
+</div>
